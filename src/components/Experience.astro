@@ -1,0 +1,23 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "01.2024 - 07.2024 ",
+    title: "Intern in: Area of evolution of collections, payments and taxes",
+    company: "Bancolombia",
+    description:
+      "Developed and implemented automated solutions to streamline banking processes, reducing processing times and errors. Worked with teams to tailor technology to the bank's needs while ensuring regulatory compliance.",
+    link: "https://twitch.tv/midudev",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

@@ -1,0 +1,94 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import Python from "./icons/Python.astro"
+import Tensorflow from "./icons/tensorflow.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+const TAGS = {
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#003159] text-white",
+    icon: Python,
+  },
+  TENSORFLOW: {
+    name: "TensorFlow",
+    class: "bg-[#003159] text-white",
+    icon: Tensorflow,
+  },
+}
+const PROJECTS = [
+  {
+    title: "UDEA_Hand_Sign_Detection",
+    description:
+      "Sign language detection project using TensorFlow and OpenCV. This system, designed to recognize and translate signs in real time, uses TensorFlow for deep learning and OpenCV for image capture and processing, improving communication with people with hearing disabilities.",
+    link: "https://www.youtube.com/watch?v=q1zCXen-3_0",
+    github: "https://github.com/sebastianbernalc/Alfabeto-de-se-as",
+    image: "/projects/hand.webp",
+    tags: [TAGS.PYTHON, TAGS.TENSORFLOW],
+  },
+  {
+    title: "APIDataAnalyzer",
+    description:
+      "This program is a graphical interface that consumes an API to obtain information about currency exchange. It allows to display exchange rates and analyze the behavior of each currency during a given period.",
+    link: "https://github.com/sebastianbernalc/APIDataAnalyzer",
+    github: "https://github.com/sebastianbernalc/APIDataAnalyzer",
+    image: "/projects/api.webp",
+    tags: [TAGS.PYTHON],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

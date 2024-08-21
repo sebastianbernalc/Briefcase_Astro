@@ -3,10 +3,12 @@ import GitHub from "./icons/GitHub.astro"
 import Python from "./icons/Python.astro"
 import Next from "./icons/Next.astro"
 import React from "./icons/React.astro"
+import Tailwind from "./icons/Tailwind.astro"
 import TypeScript from "./icons/Typescript.astro"
 import Tensorflow from "./icons/tensorflow.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Node from "./icons/Node.astro"
 
 const TAGS = {
   PYTHON: {
@@ -34,6 +36,16 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: TypeScript,
   },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-[#003159] text-white",
+    icon: Node,
+  },
 }
 const PROJECTS = [
   {
@@ -46,15 +58,6 @@ const PROJECTS = [
     tags: [TAGS.PYTHON, TAGS.TENSORFLOW],
   },
   {
-    title: "APIDataAnalyzer",
-    description:
-      "This program is a graphical interface that consumes an API to obtain information about currency exchange. It allows to display exchange rates and analyze the behavior of each currency during a given period.",
-    link: "https://github.com/sebastianbernalc/APIDataAnalyzer",
-    github: "https://github.com/sebastianbernalc/APIDataAnalyzer",
-    image: "/projects/api.webp",
-    tags: [TAGS.PYTHON],
-  },
-  {
     title: "LeanShop E-commerce",
     description:
       "E-commerce app developed with React, Next.js, Zustand, includes a REST API which allows users to manage a shopping cart in real time, explore products, and make secure purchases, with a responsive design and performance optimization.",
@@ -63,6 +66,25 @@ const PROJECTS = [
     image: "/projects/leanshop.png",
     tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT],
   },
+  {
+    title: "Notes-App",
+    description:
+      "The purpose of this project is to showcase both backend and frontend skills by developing an application that allows users to create and modify notes. The application includes features such as note filtering. The backend is built using Node.js and MongoDB, while the frontend utilizes the React framework.",
+    link: "https://notes-psi-ruby.vercel.app/login",
+    github: "https://github.com/sebastianbernalc/Notes-App.-Frontend",
+    image: "/projects/notess.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
+    title: "APIDataAnalyzer",
+    description:
+      "This program is a graphical interface that consumes an API to obtain information about currency exchange. It allows to display exchange rates and analyze the behavior of each currency during a given period.",
+    link: "https://github.com/sebastianbernalc/APIDataAnalyzer",
+    github: "https://github.com/sebastianbernalc/APIDataAnalyzer",
+    image: "/projects/api.webp",
+    tags: [TAGS.PYTHON],
+  },
+
   
 ]
 ---
